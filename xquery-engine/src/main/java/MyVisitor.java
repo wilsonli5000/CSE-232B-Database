@@ -2,8 +2,10 @@ package src.main.java;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import src.main.java.antlr.XqueryBaseVisitor;
 import src.main.java.antlr.XqueryParser;
+import sun.awt.image.ImageWatched;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,7 +18,7 @@ import java.util.LinkedList;
 public class MyVisitor extends XqueryBaseVisitor<Object> {
 
     /* use this stack to store the context for pass */
-    private LinkedList<Object> stack = new LinkedList<Object>();
+    private LinkedList<Contex> stack = new LinkedList<Contex>();
 
     @Override public Object visitAPChildren(XqueryParser.APChildrenContext ctx) {
         /*
@@ -30,13 +32,15 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(xmlFile);
-            stack.push(doc);
+            Contex cur = new Contex(doc);
+            stack.push(cur);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
         return visit(ctx.rp());
     }
+
 
     @Override public Object visitAPAll(XqueryParser.APAllContext ctx) {
         /* get the  */
@@ -54,13 +58,31 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
             for rule [.]R(n)
             return the current node
          */
-        Contex current = new Contex();
-        current.setRootFile((Document) stack.pop());
-        return current.getChildNodes();
+        Contex current = stack.peek();
+        return current.getNode();
+    }
+
+    @Override public Object visitParent(XqueryParser.ParentContext ctx) {
+
+        Contex current = stack.peek();
+        return current.getParentNode();
     }
 
     @Override public Object visitAllChildren(XqueryParser.AllChildrenContext ctx) {
         /* children(ctx) return a list of children node of this node */
+        NodeList current = (NodeList) stack.peek();
+        LinkedList<Node> res = new LinkedList<>();
+        for (int i = 0; i < current.getLength(); i++){
+            for (int j = 0; j < current.item(i).getChildNodes().getLength(); j++)
+                res.add(current.item(i).getChildNodes().item(j));
+        }
+        return res;
+    }
+
+
+
+    @Override public Object visitTagName(XqueryParser.TagNameContext ctx) {
+        LinkedList<Node> res = new LinkedList<>();
 
         return visitChildren(ctx);
     }

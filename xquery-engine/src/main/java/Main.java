@@ -3,16 +3,19 @@ package src.main.java;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import src.main.java.antlr.XqueryLexer;
 import src.main.java.antlr.XqueryParser;
+
+import java.util.LinkedList;
 
 /**
  * Created by wilsonli on 5/10/16.
  */
 public class Main {
 
-    public static String query = "document(\"pom.xml\")/.";
+    public static String query = "document(\"pom.xml\")/*";
 
     public static void main(String[] args) throws Exception{
 
@@ -24,9 +27,10 @@ public class Main {
         ParseTree tree = parser.ap();
 
         MyVisitor myVisitor = new MyVisitor();
-        NodeList res = (NodeList) myVisitor.visit(tree);
-        for (int i=0; i<res.getLength(); i++) {
-            System.out.println(res.item(i).getNodeName() + '-' + res.item(i).getFirstChild().getNodeName());
+        LinkedList<Node> res = (LinkedList<Node>) myVisitor.visit(tree);
+
+        for (int i=0; i<res.size(); i++) {
+            System.out.println(res.get(i).getNodeName());
         }
 
     }
