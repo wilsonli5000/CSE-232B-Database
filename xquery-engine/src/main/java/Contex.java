@@ -2,6 +2,7 @@ package src.main.java;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,31 +17,37 @@ public class Contex{
     private LinkedList<Node> nodeList = new LinkedList<Node>();
     private Document rootFile;
 
-    public Contex(Document doc){
-        stack.add((Node) doc);
+    public void add(Node unit){
+        nodeList.add(unit);
     }
 
     public int getLength(){
-        return stack.size();
+        return nodeList.size();
     }
 
-    public Node getNode(){
-        return stack.peek();
+    public Node getCurrentNode(){
+        return nodeList.peek();
     }
 
     public LinkedList<Node> getParentNode(){
         // s singliton list with the parent node of n //
         LinkedList<Node> res = new LinkedList<Node>();
-        res.add(stack.peek().getParentNode());
+        for (int i = 0; i < nodeList.size(); i++){
+            Node temp = nodeList.get(i);
+            res.add(temp.getParentNode());
+        }
         return res;
     }
 
-    public void setRootFile(Document doc){
-        rootFile = doc;
-    }
-
     public LinkedList<Node> getChildNodes() {
-        System.out.println("get child of current contex");
-        return null;
+        LinkedList<Node> res = new LinkedList<Node>();
+
+        for (int i = 0; i < nodeList.size(); i++){
+            NodeList temp = nodeList.get(i).getChildNodes();
+            for (int j = 0; j < temp.getLength(); j++) {
+                res.add(temp.item(j));
+            }
+        }
+        return res;
     }
 }

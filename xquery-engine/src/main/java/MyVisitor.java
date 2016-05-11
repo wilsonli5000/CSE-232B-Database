@@ -32,7 +32,8 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(xmlFile);
-            Contex cur = new Contex(doc);
+            Contex cur = new Contex();
+            cur.add(doc);
             stack.push(cur);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -59,7 +60,7 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
             return the current node
          */
         Contex current = stack.peek();
-        return current.getNode();
+        return current.getCurrentNode();
     }
 
     @Override public Object visitParent(XqueryParser.ParentContext ctx) {
@@ -70,7 +71,7 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
 
     @Override public Object visitAllChildren(XqueryParser.AllChildrenContext ctx) {
         /* children(ctx) return a list of children node of this node */
-        NodeList current = (NodeList) stack.peek();
+        Contex current = stack.peek();
         LinkedList<Node> res = new LinkedList<>();
         for (int i = 0; i < current.getLength(); i++){
             for (int j = 0; j < current.item(i).getChildNodes().getLength(); j++)
