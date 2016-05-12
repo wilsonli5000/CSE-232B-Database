@@ -15,7 +15,7 @@ import java.util.LinkedList;
  */
 public class Main {
 
-    public static String query = "document(\"pom.xml\")/*";
+    public static String query = "document(\"test.xml\")/*/drink/name/text()";
 
     public static void main(String[] args) throws Exception{
 
@@ -29,8 +29,8 @@ public class Main {
         MyVisitor myVisitor = new MyVisitor();
         LinkedList<Node> res = (LinkedList<Node>) myVisitor.visit(tree);
 
-        for (int i=0; i<res.size(); i++) {
-            System.out.println(res.get(i).getNodeName());
+        for (Node node : res) {
+            System.out.println("query node list: " + node.getNodeValue());
         }
 
     }

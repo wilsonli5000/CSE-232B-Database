@@ -18,4 +18,8 @@
         <description>Two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
         <calories>950</calories>
     </food>
+    <drink>
+            <name>Coco</name>
+            <price>$1.09</price>
+    </drink>
 </breakfast_menu>

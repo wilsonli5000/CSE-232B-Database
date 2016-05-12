@@ -25,6 +25,10 @@ public class Contex{
         return nodeList.size();
     }
 
+    public Node item(int i){
+        return nodeList.get(i);
+    }
+
     public Node getCurrentNode(){
         return nodeList.peek();
     }
