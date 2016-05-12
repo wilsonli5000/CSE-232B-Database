@@ -4,7 +4,6 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import src.main.java.antlr.XqueryLexer;
 import src.main.java.antlr.XqueryParser;
 
@@ -15,7 +14,7 @@ import java.util.LinkedList;
  */
 public class Main {
 
-    public static String query = "document(\"test.xml\")/*/drink/name/text()";
+    public static String query = "document(\"test.xml\")//*";
 
     public static void main(String[] args) throws Exception{
 
@@ -30,7 +29,7 @@ public class Main {
         LinkedList<Node> res = (LinkedList<Node>) myVisitor.visit(tree);
 
         for (Node node : res) {
-            System.out.println("query node list: " + node.getNodeValue());
+            System.out.println("returned nodes: " + node.getNodeName() + node.getTextContent());
         }
 
     }

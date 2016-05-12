@@ -7,14 +7,61 @@
 
 grammar Xquery;
 
+xq
+    : '$' var           # XQVariable
+    | StringConstant    # XQStrConst
+    | ap                # XQAp
+    | '(' xq ')'        # XQWithPar
+    | xq ',' xq         # TwoXQ
+    | xq '/' rp         # XQRp
+    | xq '//' rp        # XQRpAll
+    | '<' NAME '>' '{' xq '}' '<' '/' NAME '>'              # XQTag
+    | forClause letClause? whereClause returnClause?        #FLWR
+    | letClause xq      #XQLet
+    ;
+
+var
+    : NAME
+    ;
+
+forClause
+    : 'for' '$' var 'in' xq (',' '$' var 'in' xq)*
+    ;
+
+letClause
+    : 'let' '$' var ':=' xq (',' '$' var ':=' xq)*
+    ;
+
+whereClause
+    : 'where' cond
+    ;
+
+returnClause
+    : 'return' xq
+    ;
+
+cond
+    : xq '=' xq         #XQCondEqual
+    | xq 'eq' xq        #XQCondEqual
+    | xq '==' xq        #XQCondIs
+    | xq 'is' xq        #XQCondIs
+    | 'empty' '(' xq ')'    #XQCondEmpty
+    | 'some' var 'in' xq (',' var 'in' xq)* 'satisfies' cond    #XQCondSome
+    | '(' cond ')'      #XQCondWithPar
+    | cond 'and' cond   #XQCondAnd
+    | cond 'or' cond    #XQCondOR
+    | 'not' cond        #XQCondNot
+    ;
+
+StringConstant
+    : '"'+[a-zA-Z0-9,.!?; ''""-]+'"'
+    ;
+
 ap
-	: doc '/' rp 		# APChildren
-	| doc '//' rp		# APAll
+	: 'document("' fname '"' ')' '/' rp 		# APChildren
+	| 'document("' fname '"' ')' '//' rp		# APAll
 	;
 
-doc
-	: DOC '(' '"' fname '"' ')'
-	;
 
 fname
 	:  NAME ('.' NAME)?
@@ -32,7 +79,6 @@ rp
 	| rp '//' rp 		# RPAll
 	| rp '[' fltr ']' 	# RPCondition
 	| rp ',' rp 		# TwoRP
-	| rp '[' NUM ']'	# RPindex
 	;
 
 fltr
@@ -52,22 +98,8 @@ constant
 	: '"' NAME '"'
 	;
 
+
 NUM:    [0-9]+;
-DOC:	'document';
 TXT:	'text()';
 NAME:	[a-zA-Z0-9_-]+;
-OPAR: 	'(';
-CPAR: 	')';
-OBRAC:	'[';
-CBRAC:	']';
-DOT:	'.';
-DDOT:	'..';
-COMMA:	',';
-AT:		'@';
-PATH:	'/';
-DPATH:	'//';
-STAR:	'*';
-EQUL:	'=';
-DEQUL:	'==';
-NEWLINE:'\r'? '\n';
-WS  :   [ \t]+ -> skip;
+WS  :   [ \t\r\n]+ -> skip;

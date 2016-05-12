@@ -15,7 +15,13 @@ import java.io.File;
  */
 public class Contex{
     private LinkedList<Node> nodeList = new LinkedList<Node>();
+    private LinkedList<Node> descendents = new LinkedList<Node>();
     private Document rootFile;
+
+    public static void printNodeList(NodeList list){
+        for (int i = 0; i < list.getLength(); i++)
+            System.out.println(list.item(i).getNodeName() + " " + list.item(i).getNodeValue());
+    }
 
     public void add(Node unit){
         nodeList.add(unit);
@@ -28,7 +34,13 @@ public class Contex{
     public Node item(int i){
         return nodeList.get(i);
     }
-
+    public LinkedList<Node> getNode(){
+        LinkedList<Node> res = new LinkedList<>();
+        for (Node node : nodeList){
+            res.add(node);
+        }
+        return res;
+    }
     public Node getCurrentNode(){
         return nodeList.peek();
     }
@@ -54,4 +66,28 @@ public class Contex{
         }
         return res;
     }
+
+    public LinkedList<Node> getDescendents() {
+        if (!nodeList.isEmpty())
+            wrapGetDescendents(nodeList.getFirst());
+        return descendents;
+    }
+
+    private void wrapGetDescendents(Node root) {
+        try{
+            while (root.hasChildNodes()) {
+                NodeList temp = root.getChildNodes();
+                printNodeList(temp);
+                for (int i = 0; i < temp.getLength(); i++) {
+
+                    descendents.add(temp.item(i));
+                    root = temp.item(i);
+                    wrapGetDescendents(root);
+                }
+            }
+        } catch (Exception ex){
+                ex.printStackTrace();
+            }
+    }
+
 }
