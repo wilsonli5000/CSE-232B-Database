@@ -8,6 +8,8 @@ import src.main.java.antlr.XqueryLexer;
 import src.main.java.antlr.XqueryParser;
 import sun.awt.image.ImageWatched;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.LinkedList;
 
 /**
@@ -27,21 +29,27 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception{
+        String fname = "test_1.txt";
+        File file = new File(fname);
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(file);
+            ANTLRInputStream inputStream = new ANTLRInputStream(query);
+            XqueryLexer lexer = new XqueryLexer(inputStream);
+            CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+            XqueryParser parser = new XqueryParser(tokenStream);
+            // begin parsing at ap() rule //
+            ParseTree tree = parser.ap();
 
-        ANTLRInputStream inputStream = new ANTLRInputStream(query);
-        XqueryLexer lexer = new XqueryLexer(inputStream);
-        CommonTokenStream tokenStream = new CommonTokenStream(lexer);
-        XqueryParser parser = new XqueryParser(tokenStream);
-        // begin parsing at ap() rule //
-        ParseTree tree = parser.ap();
+            MyVisitor myVisitor = new MyVisitor();
+            LinkedList<Node> res = removeEmptyTextNode((LinkedList<Node>) myVisitor.visit(tree));
 
-        MyVisitor myVisitor = new MyVisitor();
-        LinkedList<Node> res = removeEmptyTextNode((LinkedList<Node>) myVisitor.visit(tree));
-
-        for (Node node : res) {
-            System.out.println("returned nodes: " + node.getNodeName() + "\ntext:" + node.getTextContent());
+            for (Node node : res) {
+                System.out.println("returned nodes: " + node.getNodeName() + "\ntext:" + node.getTextContent());
+            }
+        } catch (Exception ex){
+            ex.printStackTrace();
         }
-
 
     }
 
