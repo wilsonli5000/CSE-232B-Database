@@ -115,8 +115,8 @@ public class Contex{
                 }
             }
         } catch (Exception ex){
-                ex.printStackTrace();
-            }
+            ex.printStackTrace();
+        }
     }
 
 }

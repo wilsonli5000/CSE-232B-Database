@@ -1,9 +1,7 @@
 /*
- * XPath grammar
- * Filename: XPath.g4
- * Author: Yuchun Li, Meng Xue
- * Date: Apr 29, 2015
- */
+    Author: Jingyuan Li
+    Date: 5-10-2016
+*/
 
 grammar Xquery;
 
@@ -16,7 +14,7 @@ xq
     | xq '/' rp         # XQRp
     | xq '//' rp        # XQRpAll
     | '<' NAME '>' '{' xq '}' '<' '/' NAME '>'              # XQTag
-    | forClause letClause? whereClause returnClause?        #FLWR
+    | forClause letClause? whereClause? returnClause        #FLWR
     | letClause xq      #XQLet
     ;
 
@@ -46,7 +44,7 @@ cond
     | xq '==' xq        #XQCondIs
     | xq 'is' xq        #XQCondIs
     | 'empty' '(' xq ')'    #XQCondEmpty
-    | 'some' var 'in' xq (',' var 'in' xq)* 'satisfies' cond    #XQCondSome
+    | 'some' '$' var 'in' xq (',' var 'in' xq)* 'satisfies' cond    #XQCondSome
     | '(' cond ')'      #XQCondWithPar
     | cond 'and' cond   #XQCondAnd
     | cond 'or' cond    #XQCondOR

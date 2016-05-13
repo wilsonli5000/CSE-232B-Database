@@ -316,7 +316,6 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
         int i, j;
         int[] sizelist = new int[n];
         int[] flaglist = new int[n];
-
         // Run each XQuery and get loop value for each variable
         LinkedList<LinkedList<Node>> loop = new LinkedList<LinkedList<Node>>();
         for (i = 0;i < n;i ++) {
@@ -331,10 +330,8 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
             //Run letClause if needed
             if (ctx.letClause() != null) visit(ctx.letClause());
             //Run whereClause
-
             if (ctx.whereClause() == null) visit(ctx.returnClause());
             else if ((Boolean)visit(ctx.whereClause()) == true) visit(ctx.returnClause());
-
             for (i = 0;i < n;i ++) {
                 flaglist[i] += 1;
                 if (flaglist[i] < sizelist[i]) break;
