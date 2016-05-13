@@ -1,5 +1,6 @@
 package src.main.java;
 
+import com.sun.tools.classfile.ConstantPool;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -17,7 +18,7 @@ import java.util.LinkedList;
  */
 public class Main {
 
-    public static String query = "document(\"test.xml\")//food";
+    //public static String query = "for $x in document(\"test.xml\")/* where $x eq $x return $x";
 
     public static LinkedList<Node> removeEmptyTextNode(LinkedList<Node> nodeList){
         LinkedList<Node> res = new LinkedList<>();
@@ -29,24 +30,29 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception{
-        String fname = "test_1.txt";
+        String fname = "test_0.txt";
         File file = new File(fname);
         FileInputStream fis = null;
         try {
             fis = new FileInputStream(file);
-            ANTLRInputStream inputStream = new ANTLRInputStream(query);
+            ANTLRInputStream inputStream = new ANTLRInputStream(fis);
             XqueryLexer lexer = new XqueryLexer(inputStream);
             CommonTokenStream tokenStream = new CommonTokenStream(lexer);
             XqueryParser parser = new XqueryParser(tokenStream);
             // begin parsing at ap() rule //
-            ParseTree tree = parser.ap();
+            ParseTree tree = parser.xq();
 
             MyVisitor myVisitor = new MyVisitor();
-            LinkedList<Node> res = removeEmptyTextNode((LinkedList<Node>) myVisitor.visit(tree));
-
+            LinkedList<Node> res = new LinkedList<>();
+            res = (LinkedList<Node>) myVisitor.visit(tree);
+            res = myVisitor.output;
+            Contex result = new Contex();
+            result.add(res);
+            Contex.printNodeList(result.getDescendents());
+            /*
             for (Node node : res) {
-                System.out.println("returned nodes: " + node.getNodeName() + "\ntext:" + node.getTextContent());
-            }
+                System.out.println("\nreturned nodes: " + node.getNodeName() + "\ntext:" + node.getTextContent());
+            }*/
         } catch (Exception ex){
             ex.printStackTrace();
         }

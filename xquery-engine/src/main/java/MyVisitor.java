@@ -1,16 +1,20 @@
 package src.main.java;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import src.main.java.antlr.XqueryBaseVisitor;
 import src.main.java.antlr.XqueryParser;
+import sun.awt.image.ImageWatched;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -20,6 +24,10 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
 
     /* use this stack to store the context for pass */
     private LinkedList<Contex> stack = new LinkedList<Contex>();
+    private Map<String, Node> varList = new HashMap(); //Map from variable(String) to Node
+    private LinkedList<Node> emp = new LinkedList<Node>(); //Empty list of node, default return value
+    public LinkedList<Node> output = new LinkedList<Node>();; //Store result, mainly update at return clause
+
 
     private static LinkedList<Node> unique(LinkedList<Node> nodeList){
         System.out.println("unique()-->");
@@ -98,6 +106,7 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
         /* children(ctx) return a list of children node of this node */
         System.out.println("rp[*] -->");
         Contex current = stack.peek();
+        current.printContex();
         LinkedList<Node> res = new LinkedList<>();
         for (int i = 0; i < current.getLength(); i++){
             NodeList tmp = current.item(i).getChildNodes();
@@ -129,7 +138,7 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
         System.out.println("rp[tagName] -->");
         LinkedList<Node> res = new LinkedList<>();
         String tagName = (String) ctx.getText();
-        for (Node node : stack.peek().getNode())
+        for (Node node : stack.peek().getChildNodes())
             if (tagName.equals(node.getNodeName()))
                 res.add(node);
         return res;
@@ -158,6 +167,7 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
     @Override public Object visitText(XqueryParser.TextContext ctx) {
         System.out.println("rp[text()] -->");
         Contex current = stack.peek();
+        Contex.printNodeList(current.getChildNodes());
         return current.getChildNodes();
     }
 
@@ -277,6 +287,276 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
         boolean f2 = (boolean) visit(ctx.fltr(1));
         return (f1 || f2);
     }
+
+    // Modified Part 2: XQuery Override
+
+    @Override public Object visitXQVariable(XqueryParser.XQVariableContext ctx) {
+        System.out.println("XQ Variable");
+        String varname = ctx.var().NAME().getText();
+        LinkedList<Node> temp = new LinkedList<Node>();
+        temp.add(varList.get(varname));
+        return temp; }
+
+    @Override public Object visitXQAp(XqueryParser.XQApContext ctx) {
+        System.out.println("XQ Ap");
+        LinkedList<Node> res = (LinkedList<Node>) visit(ctx.ap());
+        return res; }
+
+    @Override public Object visitXQWithPar(XqueryParser.XQWithParContext ctx) {
+        System.out.println("XQ with par");
+        return visit(ctx.xq()); }
+
+    @Override public Object visitFLWR(XqueryParser.FLWRContext ctx) {
+        // Read variable name and XQuery from forClause
+        /*
+        System.out.println("forwhereletreturn -->");
+        List<XqueryParser.VarContext> loopvar = ctx.forClause().var();
+        int n = loopvar.size();
+        System.out.println("n: " + n);
+        int i, j;
+        int[] sizelist = new int[n];
+        int[] flaglist = new int[n];
+
+        // Run each XQuery and get loop value for each variable
+        LinkedList<LinkedList<Node>> loop = new LinkedList<LinkedList<Node>>();
+        for (i = 0;i < n;i ++) {
+            loop.add((LinkedList<Node>) visit(ctx.forClause().xq(i)));
+            sizelist[i] = loop.get(i).size();
+            flaglist[i] = 0;
+        }
+        //Loop until all combination of n variables traveled;
+        while (true) {
+            //Assign variable value
+            for (i = 0;i < n;i ++) varList.put(loopvar.get(i).getText(), loop.get(i).get(flaglist[i]));
+            //Run letClause if needed
+            if (ctx.letClause() != null) visit(ctx.letClause());
+            //Run whereClause
+
+            if (ctx.whereClause() == null) visit(ctx.returnClause());
+            else if ((Boolean)visit(ctx.whereClause()) == true) visit(ctx.returnClause());
+
+            for (i = 0;i < n;i ++) {
+                flaglist[i] += 1;
+                if (flaglist[i] < sizelist[i]) break;
+                flaglist[i] = 0;
+            }
+            j = 0;
+            for (i = 0;i < n;i ++) {
+                j += flaglist[i];
+            }
+            if (j == 0) break;
+        }
+        ctx.let */
+        runFLWR(ctx.forClause().var(), ctx.forClause().xq(), ctx.letClause(), ctx.whereClause(), ctx.returnClause());
+        return emp; }
+
+    public Object runFLWR(List<XqueryParser.VarContext> varl, List<XqueryParser.XqContext> xql, XqueryParser.LetClauseContext l, XqueryParser.WhereClauseContext w, XqueryParser.ReturnClauseContext r){
+        XqueryParser.VarContext currentvar = varl.get(0);
+        XqueryParser.XqContext currentxq = xql.get(0);
+        varl.remove(0);
+        xql.remove(0);
+        LinkedList<Node> varbuffer = (LinkedList<Node>) visit(currentxq);
+        int i, n = varbuffer.size();
+        String varname = currentvar.getText();
+        System.out.println("Var: " + varname + " has " + n + " nodes.");
+        if (varl.isEmpty()) {
+            for (i = 0;i < n;i ++) {
+                varList.put(varname, varbuffer.get(i));
+                if (l != null) visit(l);
+                if (w == null) visit(r);
+                else if((Boolean) visit(w) == true) {
+                    System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+                    visit(r);
+                }
+            }
+        }
+        else {
+            for (i = 0; i < n; i++) {
+                varList.put(varname, varbuffer.get(i));
+                if (varname.equals("sc")) System.out.println("varl size: " + varl.size());
+                runFLWR(varl, xql, l, w, r);
+            }
+        }
+        varl.add(0, currentvar);
+        xql.add(0, currentxq);
+        return emp;
+    }
+
+    @Override public Object visitTwoXQ(XqueryParser.TwoXQContext ctx) {
+        System.out.println("two xq");
+        LinkedList<Node> res = new LinkedList<>();
+        res.addAll((LinkedList<Node>) visit(ctx.xq(0)));
+        res.addAll((LinkedList<Node>) visit(ctx.xq(1)));
+        return res; }
+
+    @Override public Object visitXQLet(XqueryParser.XQLetContext ctx) {
+        System.out.println("XQ let");
+        visit(ctx.letClause());
+        return visit(ctx.xq()); }
+
+    @Override public Object visitXQStrConst(XqueryParser.XQStrConstContext ctx) {
+        System.out.println("XQ String Counst");
+        Contex current = new Contex();
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.newDocument();
+            String text = ctx.StringConstant().getText();
+            int n = text.length();
+            text = text.substring(1, n - 1);
+            System.out.println("text: " + text);
+            Node textNode = doc.createTextNode(text);
+            current.add(textNode);
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return current.getNode(); }
+
+    @Override public Object visitXQRp(XqueryParser.XQRpContext ctx) {
+        System.out.println("XQ RP / ");
+        LinkedList<Node> x = (LinkedList<Node>) visit(ctx.xq());
+        Contex middle = new Contex();
+        for (Node node : x)
+            middle.add(node);
+        stack.push(middle);
+        LinkedList<Node> y = (LinkedList<Node>) visit(ctx.rp());
+        LinkedList<Node> res = unique(y);
+        stack.pop();
+        return res; }
+
+    @Override public Object visitXQRpAll(XqueryParser.XQRpAllContext ctx) {
+        System.out.println("XQ RP // ");
+        LinkedList<Node> x = (LinkedList<Node>) visit(ctx.xq());
+        Contex current = new Contex();
+        current.add(x);
+        LinkedList<Node> descendents = current.getDescendents();
+        Contex middle = new Contex();
+        for (Node node : descendents) {
+            middle.add(node);
+        }
+        stack.push(middle);
+        LinkedList<Node> y = (LinkedList<Node>) visit(ctx.rp());
+        LinkedList<Node> res = unique(y);
+        stack.pop();
+
+        return res; } // To be filled in
+
+    @Override public Object visitXQTag(XqueryParser.XQTagContext ctx) {
+        System.out.println("XQ <tag> </tag>");
+        String tagName = ctx.NAME(0).getText();
+        LinkedList<Node> res = (LinkedList<Node>) visit(ctx.xq());
+        LinkedList<Node> ans = new LinkedList<>();
+        try{
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.newDocument();
+            Node tagNode = doc.createElement(tagName);
+            for (Node node : res) {
+                Node importedNode = doc.importNode(node, true);
+                tagNode.appendChild(importedNode);
+            }
+            ans.add(tagNode);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return ans; }
+
+    @Override public Object visitVar(XqueryParser.VarContext ctx) {
+        System.out.println("var");
+        String varname = ctx.getText();
+        LinkedList<Node> temp = new LinkedList<Node>();
+        temp.add((Node) varList.get(varname));
+        return temp;
+    }
+
+    @Override public Object visitForClause(XqueryParser.ForClauseContext ctx) {
+        System.out.println("for clause");
+        return emp;
+    } //Only for clause make no scene
+
+    @Override public Object visitLetClause(XqueryParser.LetClauseContext ctx) {
+        System.out.println("let clause");
+        List<XqueryParser.VarContext> varl = ctx.var();
+        LinkedList<Node> temp;
+        int i, n = varl.size();
+        for(i = 0;i < n;i ++) {
+            temp = (LinkedList<Node>) visit(ctx.xq(i));
+            varList.put(varl.get(i).getText(), temp.get(0));
+        }
+        return emp; }
+
+    @Override public Boolean visitWhereClause(XqueryParser.WhereClauseContext ctx) {
+        System.out.println("where clause");
+        return (boolean) visit(ctx.cond()); }
+
+    @Override public Object visitReturnClause(XqueryParser.ReturnClauseContext ctx) {
+        System.out.println("return clause");
+        LinkedList<Node> rt = (LinkedList<Node>) visit(ctx.xq());
+        output.addAll(rt);
+        return emp; }
+
+    @Override public Boolean visitXQCondEqual(XqueryParser.XQCondEqualContext ctx) {
+        System.out.println("xq condition equal");
+        LinkedList<Node> l0 = (LinkedList<Node>) visit(ctx.xq(0));
+        LinkedList<Node> l1 = (LinkedList<Node>) visit(ctx.xq(1));
+        int i0 = l0.size();
+        int i1 = l1.size();
+        if(i0 != i1) return false;
+        for(int i = 0;i < i0;i ++) if (!l0.get(i).isEqualNode(l1.get(i))) return false;
+        return true; }
+
+    @Override public Boolean visitXQCondIs(XqueryParser.XQCondIsContext ctx) {
+        System.out.println("xq condition is");
+        LinkedList<Node> l0 = (LinkedList<Node>) visit(ctx.xq(0));
+        LinkedList<Node> l1 = (LinkedList<Node>) visit(ctx.xq(0));
+        int i0 = l0.size();
+        int i1 = l1.size();
+        if(i0 != i1) return false;
+        for(int i = 0;i < i0;i ++) if (!l0.get(i).isSameNode(l1.get(i))) return false;
+        return true; }
+
+    @Override public Boolean visitXQCondAnd(XqueryParser.XQCondAndContext ctx) {
+        return ((boolean) visit(ctx.cond(0)) & (boolean) visit(ctx.cond(1))); }
+
+    @Override public Boolean visitXQCondNot(XqueryParser.XQCondNotContext ctx) {
+        return !((boolean) visit(ctx.cond())); }
+
+    @Override public Boolean visitXQCondEmpty(XqueryParser.XQCondEmptyContext ctx) {
+        return ((LinkedList<Node>) visit(ctx.xq())).isEmpty(); }
+
+    @Override public Boolean visitXQCondSome(XqueryParser.XQCondSomeContext ctx) {
+        Map<String, Node> buffer = varList;
+        List<XqueryParser.VarContext> varl = ctx.var();
+        LinkedList<LinkedList<Node>> temp = new LinkedList<LinkedList<Node>>();
+        int i, j, n = varl.size();
+        int[] sizelist = new int[n];
+        int[] flaglist = new int[n];
+        for (i = 0;i < n; i ++) {
+            temp.add((LinkedList<Node>) visit(ctx.xq(i)));
+            sizelist[i] = temp.get(i).size();
+            flaglist[i] = 0;
+        }
+
+        while (true) {
+            for (i = 0;i < n;i ++) buffer.put(varl.get(i).getText(), temp.get(i).get(flaglist[i]));
+            if ((boolean)visit(ctx.cond()) == true) return true;
+            for(i = 0;i < n;i ++) {
+                flaglist[i] += 1;
+                if (flaglist[i] <= sizelist[i]) break;
+                flaglist[i] = 0;
+            }
+            j = 0;
+            for (i = 0;i < n;i ++) j += flaglist[i];
+            if (j == 0) break;
+        }
+
+        return false; }
+
+    @Override public Boolean visitXQCondOR(XqueryParser.XQCondORContext ctx) {
+        return ((boolean) visit(ctx.cond(0)) | (boolean) visit(ctx.cond(1))); }
+
+    @Override public Boolean visitXQCondWithPar(XqueryParser.XQCondWithParContext ctx) {
+        return (boolean) visit(ctx.cond()); }
 
 
 }
