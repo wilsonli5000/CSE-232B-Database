@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64e7501a-c99e-4193-be2e-1ef2058ee20e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/act+scene.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/query_1.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/query_2.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/query_3.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/query_4.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/query_5.txt" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/antlr/src/main/resources/Xquery.tokens" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/antlr/src/main/resources/XqueryLexer.tokens" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/resources/XqueryBaseListener.class" afterPath="" />
@@ -61,7 +67,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/resources/XqueryParser$XqContext.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/resources/XqueryParser.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/resources/XqueryVisitor.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/Contex.class" afterPath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/Contex.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/xquery-engine/test_0.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_0.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/Main.class" afterPath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/MyVisitor.class" afterPath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/MyVisitor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/antlr/XqueryParser$APAllContext.class" afterPath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/antlr/XqueryParser$APAllContext.class" />
@@ -93,11 +100,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/antlr/XqueryParser$TwoRPContext.class" afterPath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/antlr/XqueryParser$TwoRPContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/antlr/XqueryParser.class" afterPath="$PROJECT_DIR$/out/production/xquery-engine/src/main/java/antlr/XqueryParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/xquery-engine/src/main/resources/Xquery.g4" afterPath="$PROJECT_DIR$/out/production/xquery-engine/src/main/resources/Xquery.g4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Contex.java" afterPath="$PROJECT_DIR$/src/main/java/Contex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/MyVisitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Xquery.g4" afterPath="$PROJECT_DIR$/src/main/resources/Xquery.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_0.txt" afterPath="$PROJECT_DIR$/test_0.txt" />
     </list>
     <ignored path="xquery-engine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -127,70 +134,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MyVisitor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MyVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="458" column="0" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#683#691#0" expanded="true" />
-                <element signature="e#835#841#0" expanded="true" />
-                <element signature="e#939#945#0" expanded="true" />
-                <element signature="e#10501#10507#0" expanded="true" />
-                <element signature="method#visitXQWithPar#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitFLWR#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#runFLWR#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitTwoXQ#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQLet#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQRp#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQRpAll#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitVar#0;class#MyVisitor#0" expanded="false" />
-                <element signature="e#17434#17440#0" expanded="true" />
-                <element signature="method#visitForClause#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitLetClause#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitWhereClause#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitReturnClause#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQCondEqual#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQCondIs#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQCondAnd#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQCondNot#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQCondEmpty#0;class#MyVisitor#0" expanded="false" />
-                <element signature="method#visitXQCondSome#0;class#MyVisitor#0" expanded="false" />
-                <element signature="e#20165#20183#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XqueryParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/antlr/XqueryParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4005">
-              <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-              <folding>
-                <element signature="e#37348#37349#0" expanded="true" />
-                <element signature="e#37397#37398#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_0.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_0.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Xquery.g4" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Xquery.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Xquery.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
               <folding>
                 <element signature="e#0#1986#0" expanded="true" />
               </folding>
@@ -198,21 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="j_caesar.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/j_caesar.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="2488" column="4" selection-start-line="2739" selection-start-column="22" selection-end-line="2739" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="90" column="69" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
+            <state relative-caret-position="390">
+              <caret line="64" column="60" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,8 +158,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="output.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output.xml">
+      <file leaf-file-name="query_4.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/query_4.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="query_4.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/query_4.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -230,24 +178,91 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Contex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Contex.java">
+      <file leaf-file-name="query_3.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/query_3.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="121" column="1" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
+            <state relative-caret-position="30">
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="j_caesar.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/j_caesar.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5655">
+              <caret line="2859" column="48" selection-start-line="2859" selection-start-column="22" selection-end-line="2859" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyVisitor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MyVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1873">
+              <caret line="201" column="36" selection-start-line="201" selection-start-column="33" selection-end-line="201" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#388#394#0" expanded="true" />
-                <element signature="e#455#461#0" expanded="true" />
-                <element signature="e#1061#1062#0" expanded="true" />
-                <element signature="e#1095#1096#0" expanded="true" />
-                <element signature="e#1332#1333#0" expanded="true" />
-                <element signature="e#1370#1371#0" expanded="true" />
-                <element signature="e#1400#1401#0" expanded="true" />
-                <element signature="e#1438#1439#0" expanded="true" />
-                <element signature="e#1936#1942#0" expanded="true" />
-                <element signature="e#2209#2215#0" expanded="true" />
+                <element signature="e#683#691#0" expanded="true" />
+                <element signature="e#835#841#0" expanded="true" />
+                <element signature="e#939#945#0" expanded="true" />
+                <element signature="method#unique#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitAPChildren#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitAPAll#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFname#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitAllChildren#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitRPChildren#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitRPwithPar#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitTagName#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitAttribute#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitParent#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitText#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitRPAll#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitCurrent#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitTwoRP#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitRPCondition#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRPnot#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRPwithPar#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRP#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRPequal#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRPis#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRPand#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRPor#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitXQVariable#0;class#MyVisitor#0" expanded="false" />
+                <element signature="e#10501#10507#0" expanded="true" />
+                <element signature="method#visitXQAp#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitXQWithPar#0;class#MyVisitor#0" expanded="false" />
+                <element signature="e#17442#17448#0" expanded="true" />
+                <element signature="method#visitXQCondEqual#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitXQCondIs#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitXQCondAnd#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitXQCondNot#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitXQCondEmpty#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitXQCondSome#0;class#MyVisitor#0" expanded="false" />
+                <element signature="e#20181#20199#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="query_5.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/query_5.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="query_5.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/query_5.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -283,11 +298,16 @@
         <option value="$PROJECT_DIR$/play.dtd.html" />
         <option value="$PROJECT_DIR$/j_caesar.xml" />
         <option value="$PROJECT_DIR$/test.xml" />
-        <option value="$PROJECT_DIR$/test_0.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Contex.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MyVisitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Xquery.g4" />
+        <option value="$PROJECT_DIR$/test_0.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/MyVisitor.java" />
+        <option value="$PROJECT_DIR$/query_1.txt" />
+        <option value="$PROJECT_DIR$/query_2.txt" />
+        <option value="$PROJECT_DIR$/query_3.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/query_4.txt" />
+        <option value="$PROJECT_DIR$/query_5.txt" />
       </list>
     </option>
   </component>
@@ -314,7 +334,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -481,9 +501,9 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="src.main.java.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="query_5" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -754,7 +774,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -765,14 +785,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34801137" sideWeight="0.503231" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16193181" sideWeight="0.49676898" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3096591" sideWeight="0.49676898" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38210228" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28756058" sideWeight="0.4920635" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36235118" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -801,7 +821,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="70" />
+      <option name="time" value="71" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -989,14 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/j_caesar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="2488" column="4" selection-start-line="2739" selection-start-column="22" selection-end-line="2739" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/ParserRuleContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -1026,11 +1038,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_0.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/antlr/XqueryParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="4005">
+          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+          <folding>
+            <element signature="e#37348#37349#0" expanded="false" />
+            <element signature="e#37397#37398#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1039,32 +1054,22 @@
         <state relative-caret-position="896">
           <caret line="121" column="1" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#388#394#0" expanded="true" />
-            <element signature="e#455#461#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1332#1333#0" expanded="true" />
-            <element signature="e#1370#1371#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#1936#1942#0" expanded="true" />
-            <element signature="e#2209#2215#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#388#394#0" expanded="false" />
+            <element signature="e#455#461#0" expanded="false" />
+            <element signature="e#1061#1062#0" expanded="false" />
+            <element signature="e#1095#1096#0" expanded="false" />
+            <element signature="e#1332#1333#0" expanded="false" />
+            <element signature="e#1370#1371#0" expanded="false" />
+            <element signature="e#1400#1401#0" expanded="false" />
+            <element signature="e#1438#1439#0" expanded="false" />
+            <element signature="e#1936#1942#0" expanded="false" />
+            <element signature="e#2209#2215#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="90" column="69" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output.xml">
+    <entry file="file://$PROJECT_DIR$/act+scene.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1072,58 +1077,174 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/antlr/XqueryParser.java">
+    <entry file="file://$PROJECT_DIR$/act+scene.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4005">
-          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/j_caesar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5655">
+          <caret line="2859" column="48" selection-start-line="2859" selection-start-column="22" selection-end-line="2859" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="64" column="60" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
           <folding>
-            <element signature="e#37348#37349#0" expanded="true" />
-            <element signature="e#37397#37398#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_4.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Xquery.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#1986#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MyVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="458" column="0" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
+        <state relative-caret-position="-1873">
+          <caret line="201" column="36" selection-start-line="201" selection-start-column="33" selection-end-line="201" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#683#691#0" expanded="true" />
             <element signature="e#835#841#0" expanded="true" />
             <element signature="e#939#945#0" expanded="true" />
+            <element signature="method#unique#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitAPChildren#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitAPAll#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFname#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitAllChildren#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitRPChildren#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitRPwithPar#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitTagName#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitAttribute#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitParent#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitText#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitRPAll#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitCurrent#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitTwoRP#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitRPCondition#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRPnot#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRPwithPar#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRP#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRPequal#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRPis#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRPand#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRPor#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitXQVariable#0;class#MyVisitor#0" expanded="false" />
             <element signature="e#10501#10507#0" expanded="true" />
+            <element signature="method#visitXQAp#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitXQWithPar#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitFLWR#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#runFLWR#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitTwoXQ#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitXQLet#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitXQRp#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitXQRpAll#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitVar#0;class#MyVisitor#0" expanded="false" />
-            <element signature="e#17434#17440#0" expanded="true" />
-            <element signature="method#visitForClause#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitLetClause#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitWhereClause#0;class#MyVisitor#0" expanded="false" />
-            <element signature="method#visitReturnClause#0;class#MyVisitor#0" expanded="false" />
+            <element signature="e#17442#17448#0" expanded="true" />
             <element signature="method#visitXQCondEqual#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitXQCondIs#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitXQCondAnd#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitXQCondNot#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitXQCondEmpty#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitXQCondSome#0;class#MyVisitor#0" expanded="false" />
-            <element signature="e#20165#20183#0" expanded="true" />
+            <element signature="e#20181#20199#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Xquery.g4">
+    <entry file="file://$PROJECT_DIR$/query_5.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#1986#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_5.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

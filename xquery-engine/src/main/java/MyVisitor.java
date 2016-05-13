@@ -345,7 +345,7 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
         }
         ctx.let */
         runFLWR(ctx.forClause().var(), ctx.forClause().xq(), ctx.letClause(), ctx.whereClause(), ctx.returnClause());
-        return emp; }
+        return this.output; }
 
     public Object runFLWR(List<XqueryParser.VarContext> varl, List<XqueryParser.XqContext> xql, XqueryParser.LetClauseContext l, XqueryParser.WhereClauseContext w, XqueryParser.ReturnClauseContext r){
         XqueryParser.VarContext currentvar = varl.get(0);
@@ -490,7 +490,7 @@ public class MyVisitor extends XqueryBaseVisitor<Object> {
         System.out.println("return clause");
         LinkedList<Node> rt = (LinkedList<Node>) visit(ctx.xq());
         output.addAll(rt);
-        return emp; }
+        return this.output; }
 
     @Override public Boolean visitXQCondEqual(XqueryParser.XQCondEqualContext ctx) {
         System.out.println("xq condition equal");

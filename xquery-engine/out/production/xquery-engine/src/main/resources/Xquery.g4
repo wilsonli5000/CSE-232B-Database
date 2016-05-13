@@ -1,9 +1,7 @@
 /*
- * XPath grammar
- * Filename: XPath.g4
- * Author: Yuchun Li, Meng Xue
- * Date: Apr 29, 2015
- */
+    Author: Jingyuan Li
+    Date: 5-10-2016
+*/
 
 grammar Xquery;
 

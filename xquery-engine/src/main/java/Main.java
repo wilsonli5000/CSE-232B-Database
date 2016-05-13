@@ -1,6 +1,5 @@
 package src.main.java;
 
-import com.sun.tools.classfile.ConstantPool;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -10,7 +9,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import src.main.java.antlr.XqueryLexer;
 import src.main.java.antlr.XqueryParser;
-import sun.awt.image.ImageWatched;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -38,7 +36,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception{
-        String fname = "test_0.txt";
+        String fname = args[0] + ".txt";
         File file = new File(fname);
         FileInputStream fis = null;
         try {
@@ -53,43 +51,18 @@ public class Main {
             MyVisitor myVisitor = new MyVisitor();
             LinkedList<Node> res = new LinkedList<>();
             res = (LinkedList<Node>) myVisitor.visit(tree);
-            res = myVisitor.output;
+            //res = myVisitor.output;
 
             //writeXML(res,fname);
             DocumentBuilderFactory newFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder newBuilder = newFactory.newDocumentBuilder();
             Document newDoc = newBuilder.newDocument();
-            Element element = newDoc.createElement("result");
-            newDoc.appendChild(element);
             Contex.printNodeList(res);
-            //newDoc = appendAllNodes(newDoc, res);
-            for (Node node : res) {
-                System.out.println(node.getNodeName());
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    Element element1 = newDoc.createElement(node.getNodeName());
-                    if (node.hasChildNodes()){
-                        NodeList temp = node.getChildNodes();
-                        for (int i = 0; i < temp.getLength(); i++){
-                            if (temp.item(i).getNodeType() == Node.TEXT_NODE){
-                                System.out.println(temp.item(i).getTextContent());
-                                Node textNode = newDoc.createTextNode(node.getChildNodes().item(i).getTextContent());
-                                element1.appendChild(textNode);
-                            }
-                            else if (temp.item(i).getNodeType() == Node.ELEMENT_NODE){
-                                Element element2 = newDoc.createElement(temp.item(i).getNodeName());
-                                Node text = newDoc.createTextNode(temp.item(i).getTextContent());
-                                element2.appendChild(text);
-                                element1.appendChild(element2);
-                            }
-                        }
-                    }
-                    element.appendChild(element1);
-                }
-            }
+            newDoc = appendAllNodes(newDoc, res);
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             transformer.setOutputProperty (OutputKeys.INDENT, "yes");
-            Result output = new StreamResult(new File("output.xml"));
+            Result output = new StreamResult(new File(args[0] + ".xml"));
             Source input = new DOMSource(newDoc);
             transformer.transform(input, output);
 
@@ -99,30 +72,30 @@ public class Main {
 
     }
 
-    public static Document appendAllNodes(Document doc,  LinkedList<Node> nodeList) throws Exception{
+    public static Document appendAllNodes(Document doc,  LinkedList<Node> nodeList){
         for (Node node : nodeList){
-            doc = treeWalker(doc, node);
+            System.out.println(node.getNodeName());
+            Element root = treeWalker(doc, node);
+            doc.appendChild(root);
         }
         return doc;
     }
 
-    private static Document treeWalker(Document doc, Node node) {
+    private static Element treeWalker(Document doc, Node node) {
         if (node.getNodeType() == Node.ELEMENT_NODE) {
-            Element element1 = doc.createElement(node.getNodeName());
-            if (node.hasChildNodes()) {
-                NodeList temp = node.getChildNodes();
-                for (int i = 0; i < temp.getLength(); i++) {
-                    if (temp.item(i).getNodeType() == Node.TEXT_NODE) {
-                        System.out.println(temp.item(i).getTextContent());
-                        Node textNode = doc.createTextNode(node.getChildNodes().item(i).getTextContent());
-                        element1.appendChild(textNode);
-                    } else if (temp.item(i).getNodeType() == Node.ELEMENT_NODE) {
-                        doc = treeWalker(doc, temp.item(i));
-                    }
-                }
+            Element element = doc.createElement(node.getNodeName());
+            NodeList temp = node.getChildNodes();
+            for (int i = 0; i < temp.getLength(); i++) {
+                if (temp.item(i).getNodeType() == Node.TEXT_NODE) {
+                    Node text = doc.createTextNode(node.getTextContent());
+                    element.appendChild(text);
+                } else element.appendChild(treeWalker(doc, temp.item(i)));
             }
-            element1.appendChild(element1);
+            return element;
         }
-        return doc;
+        else{
+            System.out.println("This should never happen");
+        }
+        return null;
     }
 }
