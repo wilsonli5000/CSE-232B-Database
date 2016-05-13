@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64e7501a-c99e-4193-be2e-1ef2058ee20e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/play.dtd.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/j_caesar.xml" afterPath="$PROJECT_DIR$/j_caesar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Contex.java" afterPath="$PROJECT_DIR$/src/main/java/Contex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/MyVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.xml" afterPath="$PROJECT_DIR$/test.xml" />
     </list>
     <ignored path="xquery-engine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,15 +27,17 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="xquery-engine" />
+    <favorites_list name="xquery-engine">
+      <favorite_root url="file://$USER_HOME$/Dropbox/University/UCSD/Courses/CSE 232B Database Implementation/Project/play.dtd.html" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Xquery.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Xquery.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="72" column="37" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="37" />
+            <state relative-caret-position="291">
+              <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
               <folding>
                 <element signature="e#0#2031#0" expanded="true" />
               </folding>
@@ -50,18 +58,18 @@
       <file leaf-file-name="XqueryBaseVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/antlr/XqueryBaseVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="231">
               <caret line="201" column="39" selection-start-line="201" selection-start-column="28" selection-end-line="201" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyVisitor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MyVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="209" column="57" selection-start-line="209" selection-start-column="57" selection-end-line="209" selection-end-column="57" />
+            <state relative-caret-position="-171">
+              <caret line="127" column="74" selection-start-line="127" selection-start-column="74" selection-end-line="127" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#MyVisitor#0" expanded="false" />
@@ -69,15 +77,21 @@
                 <element signature="method#unique#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitAPChildren#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitAPAll#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFname#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitAllChildren#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitRPChildren#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitRPwithPar#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitTagName#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitAttribute#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitParent#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitText#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitRPAll#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitCurrent#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitTwoRP#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitRPCondition#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRPnot#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRPwithPar#0;class#MyVisitor#0" expanded="false" />
+                <element signature="method#visitFRP#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitFRPequal#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitFRPis#0;class#MyVisitor#0" expanded="false" />
                 <element signature="method#visitFRPand#0;class#MyVisitor#0" expanded="false" />
@@ -90,18 +104,18 @@
       <file leaf-file-name="test.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+            <state relative-caret-position="75">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+            <state relative-caret-position="375">
+              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,22 +126,21 @@
       <file leaf-file-name="Contex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Contex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
+            <state relative-caret-position="214">
+              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#369#375#0" expanded="true" />
-                <element signature="e#436#442#0" expanded="true" />
-                <element signature="e#715#716#0" expanded="true" />
-                <element signature="e#749#750#0" expanded="true" />
-                <element signature="e#778#779#0" expanded="true" />
-                <element signature="e#816#817#0" expanded="true" />
-                <element signature="e#846#847#0" expanded="true" />
-                <element signature="e#884#885#0" expanded="true" />
-                <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-                <element signature="e#1295#1301#0" expanded="true" />
-                <element signature="e#1568#1574#0" expanded="true" />
+                <element signature="e#388#394#0" expanded="true" />
+                <element signature="e#455#461#0" expanded="true" />
+                <element signature="method#printNodeList#0;class#Contex#0" expanded="false" />
+                <element signature="method#printContex#0;class#Contex#0" expanded="false" />
+                <element signature="method#add#1;class#Contex#0" expanded="false" />
+                <element signature="method#getNode#0;class#Contex#0" expanded="false" />
+                <element signature="method#getCurrentNode#0;class#Contex#0" expanded="false" />
+                <element signature="method#getParentNode#0;class#Contex#0" expanded="false" />
+                <element signature="e#1936#1942#0" expanded="true" />
+                <element signature="method#getChildNodes#0;class#Contex#0" expanded="false" />
+                <element signature="e#2209#2215#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,6 +152,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -158,13 +172,15 @@
         <option value="$PROJECT_DIR$/src/main/antlr/xqueryBaseListener.java" />
         <option value="$PROJECT_DIR$/src/main/resources/test.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/XPath.g4" />
-        <option value="$PROJECT_DIR$/test.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/Xquery.g4" />
         <option value="$PROJECT_DIR$/src/main/java/antlr/XqueryBaseVisitor.java" />
         <option value="/usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class" />
+        <option value="$PROJECT_DIR$/play.dtd.html" />
+        <option value="$PROJECT_DIR$/j_caesar.xml" />
+        <option value="$PROJECT_DIR$/test.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Contex.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyVisitor.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Contex.java" />
       </list>
     </option>
   </component>
@@ -319,9 +335,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/antlr" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/University/UCSD/Courses/CSE 232B Database Implementation/Project/play.dtd.html" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -339,6 +355,7 @@
     <property name="$PROJECT_DIR$/src/main/resources/XPath.g4::/output-dir" value="$PROJECT_DIR$/src/main/java/antlr" />
     <property name="$PROJECT_DIR$/src/main/resources/XPath.g4::/gen-listener" value="true" />
     <property name="$PROJECT_DIR$/src/main/resources/XPath.g4::/gen-visitor" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -630,7 +647,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -641,18 +658,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2627841" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2911932" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38210228" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.4920635" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42045453" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3622159" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.50793654" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914772" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -673,7 +690,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -718,14 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -778,27 +787,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.xml">
+    <entry file="file://$USER_HOME$/Dropbox/University/UCSD/Courses/CSE 232B Database Implementation/Project/play.dtd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        <state relative-caret-position="60">
+          <caret line="4" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/play.dtd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/j_caesar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93593">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Xquery.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="72" column="37" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="37" />
+        <state relative-caret-position="291">
+          <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
           <folding>
             <element signature="e#0#2031#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/antlr/XqueryBaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="231">
           <caret line="201" column="39" selection-start-line="201" selection-start-column="28" selection-end-line="201" selection-end-column="39" />
           <folding />
         </state>
@@ -806,40 +847,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Contex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
+        <state relative-caret-position="214">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#369#375#0" expanded="true" />
-            <element signature="e#436#442#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1295#1301#0" expanded="true" />
-            <element signature="e#1568#1574#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#388#394#0" expanded="true" />
+            <element signature="e#455#461#0" expanded="true" />
+            <element signature="method#printNodeList#0;class#Contex#0" expanded="false" />
+            <element signature="method#printContex#0;class#Contex#0" expanded="false" />
+            <element signature="method#add#1;class#Contex#0" expanded="false" />
+            <element signature="method#getNode#0;class#Contex#0" expanded="false" />
+            <element signature="method#getCurrentNode#0;class#Contex#0" expanded="false" />
+            <element signature="method#getParentNode#0;class#Contex#0" expanded="false" />
+            <element signature="e#1936#1942#0" expanded="true" />
+            <element signature="method#getChildNodes#0;class#Contex#0" expanded="false" />
+            <element signature="e#2209#2215#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MyVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="209" column="57" selection-start-line="209" selection-start-column="57" selection-end-line="209" selection-end-column="57" />
+        <state relative-caret-position="-171">
+          <caret line="127" column="74" selection-start-line="127" selection-start-column="74" selection-end-line="127" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#MyVisitor#0" expanded="false" />
@@ -847,19 +877,35 @@
             <element signature="method#unique#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitAPChildren#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitAPAll#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFname#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitAllChildren#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitRPChildren#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitRPwithPar#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitTagName#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitAttribute#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitParent#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitText#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitRPAll#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitCurrent#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitTwoRP#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitRPCondition#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRPnot#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRPwithPar#0;class#MyVisitor#0" expanded="false" />
+            <element signature="method#visitFRP#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitFRPequal#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitFRPis#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitFRPand#0;class#MyVisitor#0" expanded="false" />
             <element signature="method#visitFRPor#0;class#MyVisitor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

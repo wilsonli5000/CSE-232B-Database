@@ -7,6 +7,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import java.awt.*;
 import java.util.LinkedList;
 import java.io.File;
 
@@ -18,13 +19,33 @@ public class Contex{
     private LinkedList<Node> descendents = new LinkedList<Node>();
     private Document rootFile;
 
-    public static void printNodeList(NodeList list){
-        for (int i = 0; i < list.getLength(); i++)
-            System.out.println(list.item(i).getNodeName() + " " + list.item(i).getNodeValue());
+    public static void printNodeList(LinkedList<Node> list){
+        if (list.size() > 0) {
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println("Name: " + list.get(i).getNodeName() + "\tText: " + list.get(i).getTextContent() + "\n");
+            }
+        }
+        else System.out.println("Contex is empty!\n");
+    }
+
+    public void printContex(){
+        LinkedList<Node> res = new LinkedList<>();
+        for (Node node : nodeList)
+            res.add(node);
+        printNodeList(res);
     }
 
     public void add(Node unit){
         nodeList.add(unit);
+    }
+
+    public void add(LinkedList<Node> ctx){
+        try{
+            for (Node node : ctx)
+                nodeList.add(node);
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     public int getLength(){
@@ -34,6 +55,7 @@ public class Contex{
     public Node item(int i){
         return nodeList.get(i);
     }
+
     public LinkedList<Node> getNode(){
         LinkedList<Node> res = new LinkedList<>();
         for (Node node : nodeList){
@@ -41,8 +63,11 @@ public class Contex{
         }
         return res;
     }
-    public Node getCurrentNode(){
-        return nodeList.peek();
+
+    public LinkedList<Node> getCurrentNode(){
+        LinkedList<Node> res = new LinkedList<>();
+        res.add(nodeList.peek());
+        return res;
     }
 
     public LinkedList<Node> getParentNode(){
@@ -68,16 +93,20 @@ public class Contex{
     }
 
     public LinkedList<Node> getDescendents() {
-        if (!nodeList.isEmpty())
-            wrapGetDescendents(nodeList.getFirst());
+        if (!nodeList.isEmpty()) {
+            for (Node node : nodeList) {
+                wrapGetDescendents(node);
+            }
+        }
+        else System.out.println("Empty Contex, will repturn empty descendent list!");
         return descendents;
     }
 
     private void wrapGetDescendents(Node root) {
         try{
             while (root.hasChildNodes()) {
+                descendents.add(root);
                 NodeList temp = root.getChildNodes();
-                printNodeList(temp);
                 for (int i = 0; i < temp.getLength(); i++) {
 
                     descendents.add(temp.item(i));
